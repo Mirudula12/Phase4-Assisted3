@@ -1,0 +1,20 @@
+<h1 *ngIf="!show else sample1">loading...</h1>
+<ng-template #sample1>{{value}}</ng-template>
+<br>
+
+
+<h1 *ngIf="!show; then display; else sample"></h1>
+<ng-template #display>{{value}}</ng-template>
+<ng-template #sample>{{cval}}</ng-template>
+
+<br>
+Provide an operator<input type="text" [(ngModel)]="op">
+<div [ngSwitch]="op">
+    <div *ngSwitchCase="'+'">{{num1+num2}}</div>
+    <div *ngSwitchCase="'-'">{{num1-num2}}</div>
+    <div *ngSwitchCase="'*'">{{num1*num2}}</div>
+    <div *ngSwitchCase="'/'">{{num1/num2}}</div>
+    <div *ngSwitchDefault>Invalid match</div>
+    </div>
+    
+    
